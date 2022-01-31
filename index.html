@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Libreria Mathjax</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="js/js.js"></script>
+</head>
+<body>
+
+
+
+<br>
+<h1>La Ley de la Gravitación Universal de Isaac Newton</h1>
+$$F = G{m1 m2 \over 2^2}$$
+
+<h1>La Ley de la Presión Hidrodinámica de Daniel Bernoulli.</h1>
+$${\displaystyle {\frac {V^{2}\rho }{2}}+{P}+{\rho gz}={\text{constante}}}$$
+
+
+<h1>La de Inducción Electromagnética de Michael Faraday.</h1>
+$${\displaystyle {\mathcal {E}}=-{\frac {\mathrm {d} \Phi _{B}}{\mathrm {d} t}}=-{\frac {\mathrm {d} }{\mathrm {d} t}}\int _{S}{\vec {B}}\cdot \mathrm {d} {\vec {S}}}$$
+
+<h1>La Segunda Ley de la Termodinámica de Rudolf Clausius.</h1>
+$${\displaystyle \left[p+{\frac {a}{T(v+c)^{2}}}\right](v-b)=RT.}$$
+
+<h1>Y la ley de relación masa-energía de la Teoría de la Relatividad Especial de Albert Einstein (E = m·c²).</h1>
+$${\displaystyle E=mc^{2}\,}$$
+
+
+<canvas id="chart" width="600px" height="500px"></canvas>
+
+<script>
+    const ctx = document.getElementById('chart').getContext('2d');
+    const xlables =[];
+
+    //...
+
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: parsear.labels,
+            datasets: [{
+                label: 'Temperatura globarl',
+                data: parsear.labels,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
